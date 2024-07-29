@@ -1,12 +1,14 @@
+import { useState } from "react";
+import { ExpensesTable } from "./components/ExpensesTable";
+import { ExpensesState } from "./components/ExpensesState";
+
 function App() {
+  const [tableState, _] = useState(new ExpensesState());
+
   return (
     <div id="template-text">
-      <h1>React Starter Template - TypeScript</h1>
-      <p>
-        For JavaScript please use{" "}
-        <a href="https://github.com/ruairidhflint/react-template">this</a>{" "}
-        template
-      </p>
+      <h1>Expenses</h1>
+      <ExpensesTable state={tableState} />
     </div>
   );
 }
